@@ -22,6 +22,10 @@ const QuoteForm = (props) => {
     setIsEntered(true);
   };
 
+  const finishFormHandler = () => {
+    setIsEntered(false);
+  };
+
   return (
     <>
       <Prompt
@@ -49,7 +53,9 @@ const QuoteForm = (props) => {
             <textarea id='text' rows='5' ref={textInputRef}></textarea>
           </div>
           <div className={classes.actions}>
-            <button className='btn'>Add Quote</button>
+            <button onClick={finishFormHandler} className='btn'>
+              Add Quote
+            </button>
           </div>
         </form>
       </Card>
